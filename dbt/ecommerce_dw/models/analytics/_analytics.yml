@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: metricas_vendas_mensal
+    description: Receita, margem e itens vendidos por mês, com crescimento MoM e média móvel de 3 meses
+
+  - name: top_produtos_por_categoria
+    description: Top 5 produtos por receita dentro de cada categoria (window function RANK)
+
+  - name: rfm_clientes
+    description: Segmentação RFM (Recência, Frequência, Valor Monetário) dos clientes usando NTILE

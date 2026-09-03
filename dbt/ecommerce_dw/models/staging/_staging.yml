@@ -1,0 +1,54 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: clientes
+      - name: produtos
+      - name: lojas
+      - name: vendas
+
+models:
+  - name: stg_clientes
+    columns:
+      - name: id_cliente
+        tests: [unique, not_null]
+
+  - name: stg_produtos
+    columns:
+      - name: id_produto
+        tests: [unique, not_null]
+      - name: preco_unitario
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+
+  - name: stg_lojas
+    columns:
+      - name: id_loja
+        tests: [unique, not_null]
+      - name: tipo_loja
+        tests:
+          - accepted_values:
+              values: ["FISICA", "ONLINE"]
+
+  - name: stg_vendas
+    columns:
+      - name: id_venda
+        tests: [unique, not_null]
+      - name: id_cliente
+        tests:
+          - relationships:
+              to: ref('stg_clientes')
+              field: id_cliente
+      - name: id_produto
+        tests:
+          - relationships:
+              to: ref('stg_produtos')
+              field: id_produto
+      - name: id_loja
+        tests:
+          - relationships:
+              to: ref('stg_lojas')
+              field: id_loja

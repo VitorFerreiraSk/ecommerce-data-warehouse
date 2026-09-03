@@ -1,0 +1,52 @@
+version: 2
+
+models:
+  - name: dim_cliente
+    description: Dimensão de clientes (SCD tipo 1)
+    columns:
+      - name: sk_cliente
+        tests: [unique, not_null]
+
+  - name: dim_produto
+    description: Dimensão de produtos
+    columns:
+      - name: sk_produto
+        tests: [unique, not_null]
+
+  - name: dim_loja
+    description: Dimensão de lojas
+    columns:
+      - name: sk_loja
+        tests: [unique, not_null]
+
+  - name: dim_tempo
+    description: Dimensão de calendário (2022-2027)
+    columns:
+      - name: sk_tempo
+        tests: [unique, not_null]
+
+  - name: fato_vendas
+    description: Tabela fato de vendas, grão = 1 item de venda
+    columns:
+      - name: id_venda
+        tests: [unique, not_null]
+      - name: sk_cliente
+        tests:
+          - relationships:
+              to: ref('dim_cliente')
+              field: sk_cliente
+      - name: sk_produto
+        tests:
+          - relationships:
+              to: ref('dim_produto')
+              field: sk_produto
+      - name: sk_loja
+        tests:
+          - relationships:
+              to: ref('dim_loja')
+              field: sk_loja
+      - name: sk_tempo
+        tests:
+          - relationships:
+              to: ref('dim_tempo')
+              field: sk_tempo

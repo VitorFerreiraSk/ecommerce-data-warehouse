@@ -1,0 +1,16 @@
+id_loja,nome_loja,cidade,estado,regiao,tipo_loja
+1,Loja Online 1,Sales de Melo,SC,Centro-Oeste,ONLINE
+2,Loja Online 2,Santos,SP,Norte,ONLINE
+3,Loja Online 3,Garcia,SC,Nordeste,ONLINE
+4,Loja Santos,Sá,SC,Norte,FISICA
+5,Loja da Costa do Amparo,Azevedo,DF,Norte,FISICA
+6,Loja Pereira Grande,Cavalcanti de Moraes,CE,Norte,FISICA
+7,Loja Farias da Mata,Ribeiro,SP,Norte,FISICA
+8,Loja Moraes,Cavalcante,RJ,Centro-Oeste,FISICA
+9,Loja Castro de Abreu,Cavalcanti,PE,Sudeste,FISICA
+10,Loja Pimenta,Nascimento Grande,RS,Norte,FISICA
+11,Loja Carvalho,Araújo,CE,Centro-Oeste,FISICA
+12,Loja Borges Paulista,Mendonça Paulista,SP,Norte,FISICA
+13,Loja Siqueira,Souza,SC,Norte,FISICA
+14,Loja Azevedo,Fonseca Verde,SP,Sul,FISICA
+15,Loja Sampaio,Rocha,PR,Centro-Oeste,FISICA

@@ -1,0 +1,16 @@
+# Copie este arquivo para ~/.dbt/profiles.yml (Linux/Mac)
+# Observação: o adapter dbt-postgres usa psycopg2 internamente, então nada muda aqui.
+# ou C:\Users\<usuario>\.dbt\profiles.yml (Windows)
+
+ecommerce_dw:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      port: 5433
+      user: dw_user
+      pass: dw_pass
+      dbname: ecommerce_dw
+      schema: staging
+      threads: 4
