@@ -1,0 +1,11 @@
+venv/
+env/
+__pycache__/
+*.pyc
+python/data/
+dbt/ecommerce_dw/target/
+dbt/ecommerce_dw/dbt_packages/
+dbt/ecommerce_dw/logs/
+.env
+.DS_Store
+Thumbs.db
